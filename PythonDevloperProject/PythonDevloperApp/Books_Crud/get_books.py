@@ -2,7 +2,7 @@ from rest_framework import generics
 from rest_framework.decorators import parser_classes
 from rest_framework.response import Response
 from ..serializers import MembersGetSerializer
-from ..models import MemberModel
+from ..models import BooksModel
 
 from rest_framework.parsers import MultiPartParser
 
@@ -12,7 +12,7 @@ class GetBooks(generics.GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            data = MemberModel.objects.all()
+            data = BooksModel.objects.all()
             serializer_class = MembersGetSerializer(data, many=True)
             return Response({'Message': 'Successful',
                              'Result': serializer_class.data,
