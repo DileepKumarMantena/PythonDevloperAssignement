@@ -24,3 +24,6 @@ class GetBooks(generics.GenericAPIView):
                              'Result': [],
                              'HasError': True,
                              'Status': 400})
+        
+
+
